@@ -1,0 +1,21 @@
+Chat:
+  type: object
+  description: Чат
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: UUID чата
+    eventId:
+      type: string
+      format: uuid
+      nullable: true
+      description: UUID события (если чат привязан к событию)
+    participantIds:
+      type: array
+      nullable: true
+      description: Участники чата
+      items:
+        type: string
+        format: uuid
+  required: [id]
