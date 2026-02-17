@@ -1,0 +1,11 @@
+PaginatedEvents:
+  type: object
+  description: Список событий с пагинацией
+  properties:
+    items:
+      type: array
+      items:
+        $ref: "./Event.yaml#/Event"
+    meta:
+      $ref: "./PaginationMeta.yaml#/PaginationMeta"
+  required: [items, meta]
