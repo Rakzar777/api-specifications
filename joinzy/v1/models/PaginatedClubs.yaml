@@ -1,0 +1,11 @@
+PaginatedClubs:
+  type: object
+  description: Список клубов с пагинацией
+  properties:
+    items:
+      type: array
+      items:
+        $ref: "./Club.yaml#/Club"
+    meta:
+      $ref: "./PaginationMeta.yaml#/PaginationMeta"
+  required: [items, meta]
