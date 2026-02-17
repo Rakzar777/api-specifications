@@ -1,0 +1,29 @@
+ErrorResponse:
+  type: object
+  description: Единый формат ошибки
+  properties:
+    error:
+      type: object
+      description: Описание ошибки
+      properties:
+        code:
+          type: string
+          description: Код ошибки (строка/enum по договоренности)
+          example: "VALIDATION_ERROR"
+        message:
+          type: string
+          description: Человеческое описание
+          example: "Поле email обязательно"
+        details:
+          description: Дополнительные детали (если есть)
+          nullable: true
+          oneOf:
+            - type: string
+            - type: object
+            - type: array
+      required: [code, message]
+    requestId:
+      type: string
+      description: Идентификатор запроса для трассировки
+      example: "req_01HZY8Y9Q1K2M3N4P5"
+  required: [error, requestId]
