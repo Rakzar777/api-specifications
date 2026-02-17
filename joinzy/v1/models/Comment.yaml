@@ -1,0 +1,27 @@
+Comment:
+  type: object
+  description: Комментарий к посту
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: UUID комментария
+    postId:
+      type: string
+      format: uuid
+      nullable: true
+      description: UUID поста
+    authorId:
+      type: string
+      format: uuid
+      nullable: true
+      description: UUID автора
+    content:
+      type: string
+      description: Текст комментария
+    createdAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Дата создания (ISO-8601)
+  required: [id, content]
