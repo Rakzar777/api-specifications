@@ -1,0 +1,11 @@
+PaginatedPosts:
+  type: object
+  description: Лента постов с пагинацией
+  properties:
+    items:
+      type: array
+      items:
+        $ref: "./Post.yaml#/Post"
+    meta:
+      $ref: "./PaginationMeta.yaml#/PaginationMeta"
+  required: [items, meta]
