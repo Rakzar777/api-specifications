@@ -1,0 +1,11 @@
+PaginatedTickets:
+  type: object
+  description: Список билетов с пагинацией
+  properties:
+    items:
+      type: array
+      items:
+        $ref: "./Ticket.yaml#/Ticket"
+    meta:
+      $ref: "./PaginationMeta.yaml#/PaginationMeta"
+  required: [items, meta]
