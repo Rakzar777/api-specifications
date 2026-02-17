@@ -1,0 +1,27 @@
+Order:
+  type: object
+  description: Заказ на билеты
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: UUID заказа
+    userId:
+      type: string
+      format: uuid
+      nullable: true
+      description: UUID пользователя (null для гостя)
+    status:
+      type: string
+      description: Статус заказа
+      enum: [pending, paid, cancelled, refunded]
+    totalAmount:
+      type: number
+      format: float
+      description: Итоговая сумма
+    createdAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Дата создания (ISO-8601)
+  required: [id, status, totalAmount]
