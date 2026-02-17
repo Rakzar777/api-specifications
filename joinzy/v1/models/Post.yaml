@@ -1,0 +1,31 @@
+Post:
+  type: object
+  description: Пост в ленте
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: UUID поста
+    authorId:
+      type: string
+      format: uuid
+      nullable: true
+      description: UUID автора
+    content:
+      type: string
+      description: Текст поста
+    createdAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Дата создания (ISO-8601)
+    updatedAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Дата обновления (ISO-8601)
+    likesCount:
+      type: integer
+      nullable: true
+      description: Количество лайков
+  required: [id, content]
