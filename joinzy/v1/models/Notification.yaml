@@ -1,0 +1,23 @@
+Notification:
+  type: object
+  description: Уведомление
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: UUID уведомления
+    type:
+      type: string
+      nullable: true
+      description: Тип уведомления
+    message:
+      type: string
+      description: Текст уведомления
+    read:
+      type: boolean
+      description: Прочитано ли
+    createdAt:
+      type: string
+      format: date-time
+      description: Дата создания (ISO-8601)
+  required: [id, message, read, createdAt]
