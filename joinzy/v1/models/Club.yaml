@@ -1,0 +1,25 @@
+Club:
+  type: object
+  description: Клуб/сообщество
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: UUID клуба
+    name:
+      type: string
+      description: Название клуба
+    description:
+      type: string
+      nullable: true
+      description: Описание клуба
+    city:
+      type: string
+      nullable: true
+      description: Город
+    avatarUrl:
+      type: string
+      format: uri
+      nullable: true
+      description: Ссылка на аватар клуба
+  required: [id, name]
