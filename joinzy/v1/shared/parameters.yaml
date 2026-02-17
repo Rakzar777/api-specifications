@@ -1,1 +1,184 @@
+q:
+  name: q
+  in: query
+  description: Поисковый запрос
+  required: false
+  schema:
+    type: string
 
+city:
+  name: city
+  in: query
+  description: Город
+  required: false
+  schema:
+    type: string
+
+categoryId:
+  name: categoryId
+  in: query
+  description: UUID категории события
+  required: false
+  schema:
+    type: string
+    format: uuid
+
+startFrom:
+  name: startFrom
+  in: query
+  description: Начало периода (ISO-8601)
+  required: false
+  schema:
+    type: string
+    format: date-time
+
+startTo:
+  name: startTo
+  in: query
+  description: Конец периода (ISO-8601)
+  required: false
+  schema:
+    type: string
+    format: date-time
+
+priceMin:
+  name: priceMin
+  in: query
+  description: Минимальная цена
+  required: false
+  schema:
+    type: number
+    format: float
+
+priceMax:
+  name: priceMax
+  in: query
+  description: Максимальная цена
+  required: false
+  schema:
+    type: number
+    format: float
+
+isFree:
+  name: isFree
+  in: query
+  description: Только бесплатные события
+  required: false
+  schema:
+    type: boolean
+
+language:
+  name: language
+  in: query
+  description: Язык события
+  required: false
+  schema:
+    type: string
+
+sort:
+  name: sort
+  in: query
+  description: Сортировка
+  required: false
+  schema:
+    type: string
+    enum: [date_asc, date_desc, price_asc, price_desc]
+
+limit:
+  name: limit
+  in: query
+  description: Количество элементов на странице
+  required: false
+  schema:
+    type: integer
+    default: 20
+    minimum: 1
+    maximum: 100
+
+cursor:
+  name: cursor
+  in: query
+  description: Курсор для следующей страницы
+  required: false
+  schema:
+    type: string
+
+eventId:
+  name: eventId
+  in: path
+  description: UUID события
+  required: true
+  schema:
+    type: string
+    format: uuid
+
+ticketId:
+  name: ticketId
+  in: path
+  description: UUID билета
+  required: true
+  schema:
+    type: string
+    format: uuid
+
+orderId:
+  name: orderId
+  in: path
+  description: UUID заказа
+  required: true
+  schema:
+    type: string
+    format: uuid
+
+clubId:
+  name: clubId
+  in: path
+  description: UUID клуба
+  required: true
+  schema:
+    type: string
+    format: uuid
+
+postId:
+  name: postId
+  in: path
+  description: UUID поста
+  required: true
+  schema:
+    type: string
+    format: uuid
+
+chatId:
+  name: chatId
+  in: path
+  description: UUID чата
+  required: true
+  schema:
+    type: string
+    format: uuid
+
+afterMessageId:
+  name: afterMessageId
+  in: query
+  description: Вернуть сообщения после указанного UUID
+  required: false
+  schema:
+    type: string
+    format: uuid
+
+notificationId:
+  name: id
+  in: path
+  description: UUID уведомления
+  required: true
+  schema:
+    type: string
+    format: uuid
+
+idempotencyKey:
+  name: Idempotency-Key
+  in: header
+  description: Уникальный ключ идемпотентности (для безопасного повтора POST /orders*)
+  required: true
+  schema:
+    type: string
