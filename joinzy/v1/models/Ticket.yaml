@@ -1,0 +1,25 @@
+Ticket:
+  type: object
+  description: Билет
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: UUID билета
+    orderId:
+      type: string
+      format: uuid
+      description: UUID заказа
+    eventId:
+      type: string
+      format: uuid
+      nullable: true
+      description: UUID события (если известно)
+    status:
+      type: string
+      description: Статус билета
+      enum: [active, refunded, cancelled]
+    checkedIn:
+      type: boolean
+      description: Отмечен ли на входе
+  required: [id, orderId, status, checkedIn]
