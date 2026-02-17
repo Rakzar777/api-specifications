@@ -1,0 +1,50 @@
+Event:
+  type: object
+  description: Событие
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: UUID события
+    title:
+      type: string
+      description: Название события
+    description:
+      type: string
+      nullable: true
+      description: Описание события
+    city:
+      type: string
+      description: Город
+    categoryId:
+      type: string
+      format: uuid
+      nullable: true
+      description: UUID категории
+    startAt:
+      type: string
+      format: date-time
+      description: Дата и время начала (ISO-8601)
+    endAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Дата и время окончания (ISO-8601)
+    price:
+      type: number
+      format: float
+      nullable: true
+      description: Цена (если платно)
+    isFree:
+      type: boolean
+      description: Бесплатно ли
+    language:
+      type: string
+      nullable: true
+      description: Язык события
+    status:
+      type: string
+      nullable: true
+      description: Статус события
+      enum: [draft, published, cancelled]
+  required: [id, title, city, startAt, isFree]
