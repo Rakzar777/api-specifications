@@ -1,1 +1,41 @@
+BadRequest:
+  description: Неверный запрос
+  content:
+    application/json:
+      schema:
+        $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
 
+Unauthorized:
+  description: Неавторизован (нет/неверный токен)
+  content:
+    application/json:
+      schema:
+        $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
+
+Forbidden:
+  description: Доступ запрещен (недостаточно прав)
+  content:
+    application/json:
+      schema:
+        $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
+
+NotFound:
+  description: Не найдено
+  content:
+    application/json:
+      schema:
+        $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
+
+Conflict:
+  description: Конфликт данных (например, повторный Idempotency-Key)
+  content:
+    application/json:
+      schema:
+        $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
+
+TooManyRequests:
+  description: Слишком много запросов (rate limit)
+  content:
+    application/json:
+      schema:
+        $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
