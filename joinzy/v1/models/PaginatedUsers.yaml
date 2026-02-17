@@ -1,0 +1,11 @@
+PaginatedUsers:
+  type: object
+  description: Список пользователей с пагинацией
+  properties:
+    items:
+      type: array
+      items:
+        $ref: "./User.yaml#/User"
+    meta:
+      $ref: "./PaginationMeta.yaml#/PaginationMeta"
+  required: [items, meta]
