@@ -1,0 +1,14 @@
+PaginationMeta:
+  type: object
+  description: Метаданные пагинации
+  properties:
+    nextCursor:
+      type: string
+      nullable: true
+      description: Курсор для следующей страницы
+      example: "eyJpZCI6IjNmYTg1ZjY0In0="
+    total:
+      type: integer
+      nullable: true
+      description: Общее количество элементов (если доступно)
+      example: 123
