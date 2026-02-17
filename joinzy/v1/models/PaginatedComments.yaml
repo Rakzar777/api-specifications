@@ -1,0 +1,11 @@
+PaginatedComments:
+  type: object
+  description: Список комментариев с пагинацией
+  properties:
+    items:
+      type: array
+      items:
+        $ref: "./Comment.yaml#/Comment"
+    meta:
+      $ref: "./PaginationMeta.yaml#/PaginationMeta"
+  required: [items, meta]
