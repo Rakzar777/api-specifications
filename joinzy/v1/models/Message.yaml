@@ -1,0 +1,24 @@
+Message:
+  type: object
+  description: Сообщение в чате
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: UUID сообщения
+    chatId:
+      type: string
+      format: uuid
+      description: UUID чата
+    senderId:
+      type: string
+      format: uuid
+      description: UUID отправителя
+    content:
+      type: string
+      description: Текст сообщения
+    sentAt:
+      type: string
+      format: date-time
+      description: Дата/время отправки (ISO-8601)
+  required: [id, chatId, senderId, content, sentAt]
