@@ -1,0 +1,11 @@
+PaginatedMessages:
+  type: object
+  description: Список сообщений с пагинацией
+  properties:
+    items:
+      type: array
+      items:
+        $ref: "./Message.yaml#/Message"
+    meta:
+      $ref: "./PaginationMeta.yaml#/PaginationMeta"
+  required: [items, meta]
