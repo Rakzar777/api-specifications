@@ -6,14 +6,14 @@ BadRequest:
         $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
 
 Unauthorized:
-  description: Неавторизован (нет/неверный токен)
+  description: Неавторизован
   content:
     application/json:
       schema:
         $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
 
 Forbidden:
-  description: Доступ запрещен (недостаточно прав)
+  description: Доступ запрещен
   content:
     application/json:
       schema:
@@ -27,14 +27,28 @@ NotFound:
         $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
 
 Conflict:
-  description: Конфликт данных (например, повторный Idempotency-Key)
+  description: Конфликт данных
+  content:
+    application/json:
+      schema:
+        $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
+
+UnprocessableEntity:
+  description: Невозможно обработать
   content:
     application/json:
       schema:
         $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
 
 TooManyRequests:
-  description: Слишком много запросов (rate limit)
+  description: Слишком много запросов
+  content:
+    application/json:
+      schema:
+        $ref: "../models/ErrorResponse.yaml#/ErrorResponse"
+
+InternalServerError:
+  description: Внутренняя ошибка сервера
   content:
     application/json:
       schema:
